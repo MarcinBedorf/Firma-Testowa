@@ -1,0 +1,236 @@
+:root {
+    --blue: #1e90ff;
+    --white: #dedede;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--white);
+}
+
+.dimmed-container {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.navbar {
+    display: flex;
+    height: 80px;
+    width: 100%;
+    padding: 0 80px;
+    margin: auto;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--white);
+}
+
+.logo {
+    height: 60%;
+}
+
+.navbar ul li {
+    position: relative;
+    display: inline-block;
+    margin: 0;
+    list-style: none;
+}
+
+.navbar ul li a {
+    color: rgb(60, 60, 60);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.navbar ul li::after {
+    position: absolute;
+    content: '';
+    left: 0;
+    bottom: -8px;
+    height: 3px;
+    width: 0;
+    background-color: var(--blue);
+    transition: width 0.5s;
+}
+
+.navbar ul li:hover::after {
+    width: 100%;
+}
+
+.wrapper {
+    margin: 30px auto;
+    width: 80vw;
+}
+
+.section-box {
+    display: flex;
+    height: 300px;
+    width: 100%;
+    margin-bottom: 50px;
+    align-items: center;
+    justify-content: center;
+}
+
+.first-section-content {
+    padding-right: 120px;
+}
+
+.section-box h1 {
+    padding-bottom: 25px;
+    font-size: 40px;
+}
+
+.section-box p {
+    padding-bottom: 25px;
+    font-size: 20px;
+}
+
+.contact-button {
+    padding: 14px 40px;
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #fff;
+    background-color: var(--blue);
+    ;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background-color 0.4s;
+}
+
+.contact-button:hover {
+    background-color: #57abff;
+}
+
+.image-container {
+    height: 300px;
+}
+
+.image-container img {
+    height: 100%;
+}
+
+.second-section-content {
+    padding-left: 120px;
+}
+
+.popup {
+    position: absolute;
+    top: -150%;
+    left: 50%;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1.25);
+    width: 380px;
+    height: 300px;
+    padding: 20px 30px;
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 2px 2px 5px 5px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    transition: top 0ms ease-in-out 200ms,
+        opacity 200ms ease-in-out 0ms,
+        transform 200ms ease-in-out 0ms;
+}
+
+.popup.active {
+    top: 50%;
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+    transition: top 0ms ease-in-out 0ms,
+        opacity 200ms ease-in-out 0ms,
+        transform 200ms ease-in-out 0ms;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 20px;
+    height: 20px;
+    background-color: #888;
+    color: #eee;
+    text-align: center;
+    line-height: 20px;
+    font-size: 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transform: rotate(45deg);
+}
+
+.popup .form h2 {
+    margin: 10px 0 20px;
+}
+
+.popup .form .form-element {
+    margin: 10px 0;
+}
+
+.popup .form .form-element input {
+    display: block;
+    margin-top: 5px;
+    width: 100%;
+    padding: 10px;
+    outline: none;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+}
+
+.submit-button {
+    width: 50%;
+    height: 40px;
+    margin-top: 10px;
+    border: none;
+    font-size: 15px;
+    color: #f5f5f5;
+    background-color: rgb(41, 41, 41);
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: auto;
+    width: 100vw;
+    background-color: #111;
+    color: #dddddd;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.footer-content h3 {
+    font-size: 1.5rem;
+    line-height: 2.7rem;
+}
+
+.footer-content p {
+    line-height: 1.5rem;
+}
+
+@keyframes animate {
+    0% {
+        width: 0;
+        height: 0;
+    }
+
+    100% {
+        width: 50px;
+        height: 50px;
+    }
+}
